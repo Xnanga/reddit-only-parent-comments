@@ -1,6 +1,14 @@
-"use: strict";
+
+import browser from 'webextension-polyfill';
 
 // const REDDIT_HOST_PATTERN = '*://*.reddit.com/*';
+
+browser.storage.sync.set({ state: 'on' });
+
+browser.storage.onChanged.addListener(({ state }) => {
+  const { newValue } = state;
+  newValue === 'on' ? activateExtension() : deactivateExtension();
+});
 
 const createUrlWithDepthQueryString = (url, depthNum) => `${url}?depth=${depthNum}`;
 
@@ -44,10 +52,3 @@ const deactivateExtension = () => {
     handleRedditThreadUrlChange,
   );
 };
-
-browser.storage.sync.set({ state: 'on' });
-
-browser.storage.onChanged.addListener(({ state }) => {
-  const { newValue } = state;
-  newValue === 'on' ? activateExtension() : deactivateExtension();
-});

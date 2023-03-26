@@ -9,6 +9,10 @@
   "author": "Jamie Peutherer",
   "license": "ISC",
   "devDependencies": {
+    "parcel": "^2.8.3",
     "webextension-polyfill": "^0.10.0"
+  },
+  "dependencies": {
+    "@parcel/config-webextension": "^2.8.3"
   }
 }

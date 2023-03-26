@@ -6,11 +6,11 @@ One of the best aspects of Reddit is discussion, however, sometimes you just wan
 
 **Before**
 
-![Reddit thread with the extension inactive showing child comments](images/jpg/reddit-thread-extension-inactive.jpg)
+![Reddit thread with the extension inactive showing child comments](src/images/jpg/reddit-thread-extension-inactive.jpg)
 
 **After**
 
-![Reddit thread with the extension active showing only parent comments](images/jpg/reddit-thread-extension-active.jpg)
+![Reddit thread with the extension active showing only parent comments](src/images/jpg/reddit-thread-extension-active.jpg)
 
 ## Notes
 

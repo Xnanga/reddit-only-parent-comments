@@ -1,7 +1,34 @@
 
+import browser from 'webextension-polyfill';
+
 const statusMsg = document.getElementById('status-msg');
 const statusSpan = document.getElementById('status-span');
 const toggleBtn = document.getElementById('toggle-btn');
+
+toggleBtn.addEventListener('click', async () => {
+  const extensionName = 'Reddit Only Parent Comments extension';
+  try {
+    const data = await storage.sync.get('state');
+    if (data.state === 'on') {
+      console.log(`${extensionName} deactivated`);
+      setBrowserStorageSync('off');
+    }
+    if (data.state === 'off') {
+      console.log(`${extensionName} activated`);
+      setBrowserStorageSync('on');
+    }
+  } catch(err) {
+    console.error(err);
+  }
+});
+
+browser.storage.onChanged.addListener(({ state }) => {
+  const { newValue } = state;
+  updateToggleBtnState(newValue);
+});
+
+window.onload = () => updateToggleBtnState();
+
 
 const changeToggleBtnCheck = (checked) => {
   if (checked) {
@@ -48,27 +75,3 @@ const setBrowserStorageSync = async (data) => {
     console.error(err);
   };
 };
-
-toggleBtn.addEventListener('click', async () => {
-  const extensionName = 'Reddit Only Parent Comments extension';
-  try {
-    const data = await browser.storage.sync.get('state');
-    if (data.state === 'on') {
-      console.log(`${extensionName} deactivated`);
-      setBrowserStorageSync('off');
-    }
-    if (data.state === 'off') {
-      console.log(`${extensionName} activated`);
-      setBrowserStorageSync('on');
-    }
-  } catch(err) {
-    console.error(err);
-  }
-});
-
-browser.storage.onChanged.addListener(({ state }) => {
-  const { newValue } = state;
-  updateToggleBtnState(newValue);
-});
-
-window.onload = () => updateToggleBtnState();

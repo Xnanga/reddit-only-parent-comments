@@ -1,0 +1,14 @@
+{
+  "name": "reddit-only-parent-comments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jamie Peutherer",
+  "license": "ISC",
+  "devDependencies": {
+    "webextension-polyfill": "^0.10.0"
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "reddit-only-parent-comments",
+  "name": "reddit-only-parent-comments-firefox",
   "version": "1.0.1",
-  "description": "A lightweight extension for Reddit which auto-hides replies to comments, allowing you to focus on only the top comments in each thread.",
+  "description": "A lightweight Firefox extension for Reddit which auto-hides replies to comments, allowing you to focus on only the top comments in each thread.",
   "main": "scripts/background.js",
   "author": "Jamie Peutherer",
   "license": "ISC"

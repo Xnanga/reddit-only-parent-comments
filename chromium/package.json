@@ -1,0 +1,8 @@
+{
+  "name": "reddit-only-parent-comments-chrome",
+  "version": "1.0.1",
+  "description": "A lightweight Google Chrome extension for Reddit which auto-hides replies to comments, allowing you to focus on only the top comments in each thread.",
+  "main": "scripts/background.js",
+  "author": "Jamie Peutherer",
+  "license": "ISC"
+}

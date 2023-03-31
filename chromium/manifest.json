@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Only Parent Comments",
+  "description": "A lightweight extension for Reddit which auto-hides replies to comments, allowing you to focus on only the top comments in each thread.",
+  "version": "1.0.0",
+
+  "author": "Jamie Peutherer",
+  "homepage_url": "https://jamiethe.dev",
+
+  "icons": {
+    "48": "images/png/ropc-icon-48x48.png",
+    "96": "images/png/ropc-icon-96x96.png"
+  },
+
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.reddit.com/",
+    "https://old.reddit.com/"
+  ],
+
+  "action": {
+    "default_title": "Reddit Only Parent Comments",
+    "default_icon": {
+      "48": "images/png/ropc-icon-48x48.png",
+      "96": "images/png/ropc-icon-96x96.png"
+    },
+    "default_popup": "popup/toggle-active.html"
+  },
+
+  "minimum_chrome_version": "93",
+  "background": {
+    "service_worker": "background/reddit-url-handler.js",
+    "type": "module"
+  }
+}

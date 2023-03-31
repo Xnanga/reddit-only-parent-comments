@@ -1,14 +1,8 @@
 {
   "name": "reddit-only-parent-comments",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "A lightweight extension for Reddit which auto-hides replies to comments, allowing you to focus on only the top comments in each thread.",
   "main": "scripts/background.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Jamie Peutherer",
-  "license": "ISC",
-  "devDependencies": {
-    "webextension-polyfill": "^0.10.0"
-  }
+  "license": "ISC"
 }

@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Reddit Only Parent Comments",
   "description": "A lightweight extension for Reddit which auto-hides replies to comments, allowing you to focus on only the top comments in each thread.",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "author": "Jamie Peutherer",
   "homepage_url": "https://jamiethe.dev",
@@ -14,7 +14,7 @@
 
   "browser_specific_settings": {
     "gecko": {
-        "id": "6b88dbd3-3173-4450-990d-c93c7e03249b"
+        "id": "{6b88dbd3-3173-4450-990d-c93c7e03249b}"
     }
   },
   
@@ -33,7 +33,6 @@
 
   "background": {
     "scripts": [
-      "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
       "background/reddit-url-handler.js"
     ]
   }

@@ -1,6 +1,6 @@
 "use: strict";
 
-// const REDDIT_HOST_PATTERN = '*://*.reddit.com/*';
+const REDDIT_HOST_PATTERN = '*://*.reddit.com/*';
 
 const createUrlWithDepthQueryString = (url, depthNum) => `${url}?depth=${depthNum}`;
 
@@ -23,19 +23,17 @@ const handleRedditThreadUrlChange = async (tabId, { url }) => {
 
   if (isValidRedditThreadUrl) {
     try {
-      await browser.tabs.update(tabId, { url: createUrlWithDepthQueryString(url, 1) });
+      await browser.tabs.update(tabId, { url: createUrlWithDepthQueryString(url, 1), loadReplace: true });
     } catch (err) {
       console.error(err);
-    };
+    }
   };
 };
 
 const activateExtension = () => {
   browser.tabs.onUpdated.addListener(
     handleRedditThreadUrlChange,
-  
-    // Filters not yet supported in Chrome as of 26/03/23
-    // { urls: [REDDIT_HOST_PATTERN], properties: ['url'] },
+    { urls: [REDDIT_HOST_PATTERN], properties: ['url'] },
   );
 };
 

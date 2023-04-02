@@ -12,6 +12,7 @@ toggleBtn.addEventListener('click', async () => {
       setBrowserStorageSync('off');
     }
     if (data.state === 'off') {
+      console.log(`${extensionName} activated`);
       setBrowserStorageSync('on');
     }
   } catch(err) {

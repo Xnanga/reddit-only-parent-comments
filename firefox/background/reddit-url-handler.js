@@ -30,6 +30,16 @@ const handleRedditThreadUrlChange = async (tabId, { url }) => {
   };
 };
 
+const determineStartupState = async () => {
+  try {
+    const { state } = await browser.storage.sync.get('state');
+    if (state === 'off' || !state) deactivateExtension();
+    else activateExtension();
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const activateExtension = () => {
   browser.tabs.onUpdated.addListener(
     handleRedditThreadUrlChange,
@@ -43,7 +53,7 @@ const deactivateExtension = () => {
   );
 };
 
-browser.storage.sync.set({ state: 'on' });
+determineStartupState();
 
 browser.storage.onChanged.addListener(({ state }) => {
   const { newValue } = state;
